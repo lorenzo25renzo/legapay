@@ -1,0 +1,7 @@
+{
+  "name": "legapayApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
