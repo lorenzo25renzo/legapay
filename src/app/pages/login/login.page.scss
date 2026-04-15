@@ -1,0 +1,175 @@
+.login-content {
+  --background: #f4faf7;
+}
+
+.top-bubble {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: rgba(46, 125, 94, 0.08);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* ── Logo Section ── */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.logo-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.app-name {
+  margin: 0 0 4px;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--lega-text-dark);
+  letter-spacing: -0.5px;
+}
+.app-tagline {
+  margin: 0;
+  font-size: 14px;
+  color: var(--lega-text-muted);
+}
+
+/* ── Form Card ── */
+.form-card {
+  background: white;
+  border-radius: 24px;
+  margin: 0 20px;
+  padding: 28px 24px 20px;
+  border: 1px solid var(--lega-border);
+  position: relative;
+  z-index: 1;
+}
+
+.input-group {
+  margin-bottom: 14px;
+}
+.input-wrap {
+  display: flex;
+  align-items: center;
+  background: #f7fbf9;
+  border: 1.5px solid var(--lega-border);
+  border-radius: 14px;
+  padding: 0 14px;
+  height: 52px;
+  gap: 10px;
+}
+.input-wrap:focus-within {
+  border-color: var(--lega-green);
+  background: white;
+}
+.input-icon {
+  font-size: 18px;
+  color: var(--lega-green);
+  flex-shrink: 0;
+}
+.input-icon-right {
+  font-size: 18px;
+  color: var(--lega-text-muted);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-left: auto;
+}
+.text-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--lega-text-dark);
+  font-family: inherit;
+}
+.text-input::placeholder {
+  color: #b0c4bc;
+}
+
+.forgot-row {
+  text-align: right;
+  margin-bottom: 20px;
+}
+.forgot-link {
+  font-size: 13px;
+  color: var(--lega-green);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn {
+  --background: var(--lega-green);
+  --color: white;
+  --border-radius: 14px;
+  height: 52px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.3px;
+}
+
+.register-row {
+  text-align: center;
+  font-size: 13px;
+  color: var(--lega-text-muted);
+  margin: 0;
+}
+.register-link {
+  color: var(--lega-green);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ── Mascot Section ── */
+.mascot-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+.mascot-bubble {
+  position: absolute;
+  bottom: 40px;
+  width: 260px;
+  height: 180px;
+  background: rgba(46, 125, 94, 0.07);
+  border-radius: 50%;
+  z-index: 0;
+}
+.mascot-img {
+  width: 200px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+.bottom-icons {
+  display: flex;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+.bottom-icon-pill {
+  width: 52px;
+  height: 36px;
+  background: white;
+  border: 1px solid var(--lega-border);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--lega-green);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}

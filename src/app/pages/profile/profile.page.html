@@ -1,0 +1,138 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/logo.png" alt="LegaPay" style="height:32px;" />
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/notifications">
+        <ion-icon name="notifications-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Profile Header -->
+  <div class="profile-banner">
+    <div class="avatar-wrap">
+      <div class="avatar-circle">JD</div>
+      <div class="avatar-edit">
+        <ion-icon name="camera-outline"></ion-icon>
+      </div>
+    </div>
+    <h2 class="profile-name">Juan Dela Cruz</h2>
+    <p class="profile-id">Student ID: 2023-00123</p>
+    <p class="profile-course">BS Information Technology — 3rd Year</p>
+  </div>
+
+  <!-- Account Info -->
+  <p class="section-label">Account Information</p>
+  <ion-card class="info-card">
+    <ion-card-content>
+      <div class="info-row">
+        <ion-icon name="mail-outline" class="info-icon"></ion-icon>
+        <div class="info-content">
+          <p class="info-label">Email Address</p>
+          <p class="info-val">juandelacruz@school.edu.ph</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-row">
+        <ion-icon name="call-outline" class="info-icon"></ion-icon>
+        <div class="info-content">
+          <p class="info-label">Mobile Number</p>
+          <p class="info-val">+63 912 345 6789</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-row">
+        <ion-icon name="school-outline" class="info-icon"></ion-icon>
+        <div class="info-content">
+          <p class="info-label">Department</p>
+          <p class="info-val">College of Computer Studies</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-row">
+        <ion-icon name="calendar-outline" class="info-icon"></ion-icon>
+        <div class="info-content">
+          <p class="info-label">School Year</p>
+          <p class="info-val">2023–2024, 1st Semester</p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Payment Summary -->
+  <p class="section-label">Payment Summary</p>
+  <div class="pay-summary-grid">
+    <div class="pay-summary-card">
+      <p class="ps-label">Total Fee</p>
+      <p class="ps-val">₱25,000</p>
+    </div>
+    <div class="pay-summary-card">
+      <p class="ps-label">Paid</p>
+      <p class="ps-val green-text">₱12,000</p>
+    </div>
+    <div class="pay-summary-card full-orange">
+      <p class="ps-label">Remaining</p>
+      <p class="ps-val orange-text">₱13,000</p>
+    </div>
+  </div>
+
+  <!-- Settings -->
+  <p class="section-label">Settings</p>
+  <ion-card class="settings-card">
+    <ion-card-content>
+
+      <div class="settings-row">
+        <div class="settings-left">
+          <div class="settings-icon-wrap green-icon"><ion-icon name="notifications-outline"></ion-icon></div>
+          <p class="settings-label">Push Notifications</p>
+        </div>
+        <ion-toggle [(ngModel)]="notifEnabled" color="success"></ion-toggle>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="settings-row">
+        <div class="settings-left">
+          <div class="settings-icon-wrap blue-icon"><ion-icon name="finger-print-outline"></ion-icon></div>
+          <p class="settings-label">Biometric Login</p>
+        </div>
+        <ion-toggle [(ngModel)]="bioEnabled" color="success"></ion-toggle>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="settings-row" (click)="changePassword()">
+        <div class="settings-left">
+          <div class="settings-icon-wrap orange-icon"><ion-icon name="lock-closed-outline"></ion-icon></div>
+          <p class="settings-label">Change Password</p>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="settings-row" (click)="contactSupport()">
+        <div class="settings-left">
+          <div class="settings-icon-wrap gray-icon"><ion-icon name="headset-outline"></ion-icon></div>
+          <p class="settings-label">Contact Support</p>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Logout -->
+  <ion-button expand="block" fill="outline" class="logout-btn" (click)="logout()">
+    <ion-icon name="log-out-outline" slot="start"></ion-icon>
+    Log Out
+  </ion-button>
+
+  <p class="app-version">LegaPay v1.0.0 · © 2024</p>
+
+</ion-content>

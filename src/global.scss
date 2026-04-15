@@ -35,3 +35,145 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+:root {
+  --lega-green: #2e7d5e;
+  --lega-green-light: #e8f5f0;
+  --lega-green-mid: #4caf88;
+  --lega-text-dark: #1a2e25;
+  --lega-text-muted: #7a9487;
+  --lega-white: #ffffff;
+  --lega-card-bg: #f7fbf9;
+  --lega-border: #d4e8de;
+}
+
+/* ── Global Reset ── */
+* {
+  box-sizing: border-box;
+}
+
+/* ── Force light backgrounds everywhere ── */
+ion-app,
+ion-router-outlet,
+ion-nav {
+  background: #f4faf7 !important;
+}
+
+/* ── ion-content background ── */
+ion-content {
+  --background: #f4faf7;
+  --color: #1a2e25;
+}
+
+/* ── ion-card fix — remove dark background ── */
+ion-card {
+  --background: #ffffff;
+  --color: #1a2e25;
+  background: #ffffff !important;
+  color: #1a2e25 !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+  border: 1px solid #d4e8de;
+  margin: 0 0 12px 0;
+}
+
+ion-card-header {
+  --background: #ffffff;
+  background: #ffffff !important;
+  padding-bottom: 4px;
+}
+
+ion-card-title {
+  --color: #1a2e25;
+  color: #1a2e25 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+ion-card-content {
+  --background: #ffffff;
+  background: #ffffff !important;
+  color: #1a2e25 !important;
+}
+
+/* ── ion-toolbar fix ── */
+ion-toolbar {
+  --background: #ffffff;
+  --color: #1a2e25;
+  --border-color: #d4e8de;
+}
+
+ion-title {
+  --color: #1a2e25;
+  color: #1a2e25 !important;
+}
+
+/* ── ion-header ── */
+ion-header {
+  background: #ffffff;
+}
+
+ion-header::after {
+  background: #d4e8de !important;
+}
+
+/* ── Tab bar ── */
+ion-tab-bar {
+  --background: #ffffff;
+  border-top: 1px solid #d4e8de;
+  height: 62px;
+}
+
+ion-tab-button {
+  --color: #7a9487;
+  --color-selected: #2e7d5e;
+  font-size: 11px;
+  --background: #ffffff;
+}
+
+ion-tab-button ion-label {
+  font-size: 11px;
+}
+
+/* ── ion-button defaults ── */
+ion-button {
+  --background-activated: transparent;
+}
+
+/* ── ion-back-button ── */
+ion-back-button {
+  --color: #2e7d5e;
+}
+
+/* ── ion-icon default color ── */
+ion-icon {
+  color: inherit;
+}
+
+/* ── ion-item fix ── */
+ion-item {
+  --background: #ffffff;
+  --color: #1a2e25;
+  --border-color: #d4e8de;
+}
+
+/* ── ion-list fix ── */
+ion-list {
+  background: #ffffff !important;
+}
+
+/* ── ion-toggle ── */
+ion-toggle {
+  --track-background-checked: #2e7d5e;
+}
+
+/* ── Login & Register scroll padding fix ── */
+.login-content::part(scroll),
+.register-content::part(scroll) {
+  padding: 0 !important;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}

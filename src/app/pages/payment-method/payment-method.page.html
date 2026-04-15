@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pay Tuition Fee</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="amount-banner">
+    <!-- PASTE student mascot: src/assets/student-mascot.png -->
+    <img src="assets/student-mascot.png" class="pay-mascot" alt="student" />
+    <div>
+      <p class="amount-label">Amount to Pay</p>
+      <h2 class="amount-value">₱13,000</h2>
+    </div>
+  </div>
+
+  <p class="section-label">Choose Payment Method</p>
+
+  <!-- E-Wallet -->
+  <ion-card class="method-card" routerLink="/confirm-payment" [queryParams]="{method: 'ewallet'}">
+    <ion-card-content>
+      <div class="method-row">
+        <div class="method-icon-wrap green-icon">
+          <ion-icon name="wallet-outline"></ion-icon>
+        </div>
+        <div class="method-info">
+          <p class="method-name">E-Wallet</p>
+          <!-- PASTE gcash.png and maya.png: src/assets/ewallets/ -->
+          <div class="sub-logos">
+            <img src="assets/ewallets/gcash.png" alt="GCash" class="sub-logo" />
+            <img src="assets/ewallets/maya.png" alt="Maya" class="sub-logo" />
+          </div>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Online Banking -->
+  <ion-card class="method-card" routerLink="/confirm-payment" [queryParams]="{method: 'online-banking'}">
+    <ion-card-content>
+      <div class="method-row">
+        <div class="method-icon-wrap blue-icon">
+          <ion-icon name="business-outline"></ion-icon>
+        </div>
+        <div class="method-info">
+          <p class="method-name">Online Banking</p>
+          <!-- PASTE bank logos: src/assets/banks/ -->
+          <div class="sub-logos">
+            <img src="assets/banks/bdo.png" alt="BDO" class="sub-logo" />
+            <img src="assets/banks/bpi.png" alt="BPI" class="sub-logo" />
+            <img src="assets/banks/landbank.png" alt="Landbank" class="sub-logo" />
+            <img src="assets/banks/metrobank.png" alt="Metrobank" class="sub-logo" />
+            <img src="assets/banks/unionbank.png" alt="UnionBank" class="sub-logo" />
+          </div>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Debit / Credit Card -->
+  <ion-card class="method-card" routerLink="/confirm-payment" [queryParams]="{method: 'card'}">
+    <ion-card-content>
+      <div class="method-row">
+        <div class="method-icon-wrap orange-icon">
+          <ion-icon name="card-outline"></ion-icon>
+        </div>
+        <div class="method-info">
+          <p class="method-name">Debit / Credit Card</p>
+          <p class="method-sub">Visa, Mastercard, JCB</p>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Over-the-Counter -->
+  <ion-card class="method-card" routerLink="/confirm-payment" [queryParams]="{method: 'otc'}">
+    <ion-card-content>
+      <div class="method-row">
+        <div class="method-icon-wrap gray-icon">
+          <ion-icon name="storefront-outline"></ion-icon>
+        </div>
+        <div class="method-info">
+          <p class="method-name">Over-the-Counter</p>
+          <p class="method-sub">7-Eleven, Bayad Center, Cebuana</p>
+        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

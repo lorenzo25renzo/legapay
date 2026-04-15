@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start">
+      <!-- PASTE your logo image here: src/assets/logo.png -->
+      <img src="assets/logo.png" alt="LegaPay" style="height: 32px;" />
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/notifications">
+        <ion-icon name="notifications-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="menu-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Greeting Row -->
+  <div class="greeting-row">
+    <div>
+      <p class="greeting-sub">Good day,</p>
+      <h2 class="greeting-name">Hi, User! 👋</h2>
+    </div>
+    <!-- PASTE student mascot: src/assets/student-mascot.png -->
+    <img src="assets/student-mascot.png" class="mascot-img" alt="student" />
+  </div>
+
+  <!-- Fee Summary Cards -->
+  <div class="cards-grid">
+    <div class="summary-card green-card">
+      <p class="card-label">Total Tuition Fee</p>
+      <h3 class="card-amount">₱25,000</h3>
+    </div>
+    <div class="summary-card">
+      <p class="card-label">Paid Amount</p>
+      <h3 class="card-amount green-text">₱12,000</h3>
+    </div>
+    <div class="summary-card">
+      <p class="card-label">Remaining Balance</p>
+      <h3 class="card-amount orange-text">₱13,000</h3>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-row">
+    <ion-button expand="block" class="pay-btn" routerLink="/payment-method">
+      <ion-icon name="card-outline" slot="start"></ion-icon>
+      Pay Now
+    </ion-button>
+    <ion-button expand="block" fill="outline" class="history-btn" routerLink="/tabs/history">
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      View History
+    </ion-button>
+  </div>
+
+  <!-- Fee Breakdown Card -->
+  <ion-card class="breakdown-card">
+    <ion-card-header>
+      <ion-card-title class="breakdown-title">Detailed Fee Structure</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="fee-row"><span>Total Tuition</span><span>₱25,000</span></div>
+      <div class="fee-row"><span>Lab Fees</span><span>₱3,000</span></div>
+      <div class="fee-row"><span>Library Fee</span><span>₱2,000</span></div>
+      <div class="fee-row"><span>Misc. Fees</span><span>₱1,000</span></div>
+      <div class="fee-row fee-total"><span>Subtotal</span><span>₱25,000</span></div>
+
+      <div class="divider"></div>
+      <p class="breakdown-title" style="margin-bottom:8px;">Payment Breakdown</p>
+      <div class="fee-row"><span>Paid</span><span class="green-text">₱12,000</span></div>
+      <div class="fee-row"><span>Remaining</span><span class="orange-text">₱13,000</span></div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Upcoming Due -->
+  <ion-card class="due-card">
+    <ion-card-content>
+      <div class="due-row">
+        <ion-icon name="alarm-outline" class="due-icon"></ion-icon>
+        <div>
+          <p class="due-label">Upcoming Due</p>
+          <p class="due-date">May 31, 2024</p>
+        </div>
+        <ion-button fill="clear" size="small" class="due-details-btn">View Details</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

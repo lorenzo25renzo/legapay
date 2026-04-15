@@ -1,0 +1,107 @@
+.pay-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--lega-green);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.pay-banner-text { flex: 1; }
+.banner-sub { margin: 0; font-size: 11px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.5px; }
+.banner-title { margin: 4px 0 2px; font-size: 22px; font-weight: 700; color: white; }
+.banner-school { margin: 0; font-size: 12px; color: rgba(255,255,255,0.8); }
+.banner-mascot { width: 70px; height: auto; }
+
+.balance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.balance-card {
+  background: white;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid var(--lega-border);
+}
+.full-width { grid-column: 1 / -1; }
+.orange-border { border-color: #ffe0b2; background: #fff8f0; }
+.balance-label { margin: 0 0 4px; font-size: 12px; color: var(--lega-text-muted); }
+.balance-amount { margin: 0; font-size: 22px; font-weight: 700; color: var(--lega-text-dark); }
+.green-text { color: var(--lega-green) !important; }
+.orange-text { color: #e67e22 !important; }
+
+.progress-bar-wrap {
+  background: #fde8cc;
+  border-radius: 20px;
+  height: 7px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: #e67e22;
+  border-radius: 20px;
+}
+.progress-label { margin: 4px 0 0; font-size: 11px; color: #e67e22; font-weight: 600; }
+
+.due-reminder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff3e0;
+  border: 1px solid #ffe0b2;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+.due-icon { font-size: 26px; color: #e67e22; flex-shrink: 0; }
+.due-title { margin: 0; font-size: 11px; color: #b26a00; text-transform: uppercase; letter-spacing: 0.4px; }
+.due-date { margin: 3px 0 0; font-size: 15px; font-weight: 600; color: #7d4e00; }
+.due-tag {
+  font-size: 11px;
+  background: #e67e22;
+  color: white;
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin-left: 6px;
+  font-weight: 500;
+}
+
+.breakdown-card {
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid var(--lega-border);
+  margin-bottom: 16px;
+}
+.breakdown-title { font-size: 14px; font-weight: 600; color: var(--lega-text-dark); }
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--lega-text-muted);
+  padding: 5px 0;
+}
+.fee-total { font-weight: 700; color: var(--lega-text-dark); }
+.divider { height: 1px; background: var(--lega-border); margin: 8px 0; }
+
+.main-pay-btn {
+  --background: var(--lega-green);
+  --color: white;
+  --border-radius: 14px;
+  height: 52px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.secure-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--lega-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 80px;
+}

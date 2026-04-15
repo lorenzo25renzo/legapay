@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Payment Receipt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Success Card -->
+  <div class="success-card">
+    <div class="success-logo-wrap">
+      <!-- PASTE: src/assets/logo.png -->
+      <img src="assets/logo.png" alt="LegaPay" class="success-logo" />
+    </div>
+    <div class="success-badge">
+      <ion-icon name="checkmark-circle"></ion-icon>
+      Payment Successful!
+    </div>
+    <h2 class="success-amount">₱13,000</h2>
+    <span class="paid-tag">Paid</span>
+
+    <div class="receipt-details">
+      <div class="receipt-row">
+        <span class="receipt-label">Receipt ID</span>
+        <span class="receipt-val">#12345</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Date</span>
+        <span class="receipt-val">May 15, 2024</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Payment Method</span>
+        <span class="receipt-val">E-Wallet</span>
+      </div>
+      <div class="receipt-row">
+        <span class="receipt-label">Remaining Balance</span>
+        <span class="receipt-val orange-text">₱0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dotted Divider -->
+  <div class="dotted-divider"></div>
+
+  <!-- Footer Summary -->
+  <ion-card class="summary-footer-card">
+    <ion-card-content>
+      <div class="summary-row"><span class="summary-label">Total Paid to Date</span><span class="summary-val green-text">₱25,000</span></div>
+      <div class="divider"></div>
+      <div class="summary-row"><span class="summary-label">Next Payment Due</span><span class="summary-val">₱25,000</span></div>
+      <div class="summary-row"><span class="summary-label">Due In</span><span class="due-chip">15 days</span></div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Action Buttons -->
+  <ion-button expand="block" class="view-bill-btn" (click)="viewBill()">
+    <ion-icon name="document-text-outline" slot="start"></ion-icon>
+    View Detailed Bill
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" class="download-btn" (click)="downloadReceipt()">
+    <ion-icon name="download-outline" slot="start"></ion-icon>
+    Download Receipt
+  </ion-button>
+
+  <ion-button expand="block" fill="clear" class="home-btn" routerLink="/tabs/home">
+    Back to Home
+  </ion-button>
+
+</ion-content>

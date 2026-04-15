@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <img src="assets/logo.png" alt="LegaPay" style="height:30px;" />
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/notifications">
+        <ion-icon name="notifications-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2 class="page-title">Payment History</h2>
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Paid</button>
+    <button class="filter-btn">Pending</button>
+  </div>
+
+  <!-- History Items -->
+  <div class="history-list">
+
+    <div class="history-item">
+      <!-- PASTE: assets/ewallets/gcash.png -->
+      <img src="assets/ewallets/gcash.png" alt="GCash" class="hist-logo" />
+      <div class="hist-info">
+        <p class="hist-date">Apr 20, 2024</p>
+        <p class="hist-method">GCash</p>
+      </div>
+      <div class="hist-right">
+        <p class="hist-amount">₱6,000</p>
+        <span class="badge paid">Paid</span>
+      </div>
+    </div>
+
+    <div class="history-item">
+      <!-- PASTE: assets/ewallets/maya.png -->
+      <img src="assets/ewallets/maya.png" alt="Maya" class="hist-logo" />
+      <div class="hist-info">
+        <p class="hist-date">Mar 31, 2024</p>
+        <p class="hist-method">Maya</p>
+      </div>
+      <div class="hist-right">
+        <p class="hist-amount">₱6,000</p>
+        <span class="badge paid">Paid</span>
+      </div>
+    </div>
+
+    <div class="history-item">
+      <!-- PASTE: assets/banks/bdo.png -->
+      <img src="assets/banks/bdo.png" alt="BDO" class="hist-logo" />
+      <div class="hist-info">
+        <p class="hist-date">Mar 02, 2024</p>
+        <p class="hist-method">BDO Online</p>
+      </div>
+      <div class="hist-right">
+        <p class="hist-amount">₱4,000</p>
+        <span class="badge paid">Paid</span>
+      </div>
+    </div>
+
+    <div class="history-item">
+      <!-- PASTE: assets/banks/bpi.png -->
+      <img src="assets/banks/bpi.png" alt="BPI" class="hist-logo" />
+      <div class="hist-info">
+        <p class="hist-date">Jan 31, 2024</p>
+        <p class="hist-method">BPI Online</p>
+      </div>
+      <div class="hist-right">
+        <p class="hist-amount">₱3,000</p>
+        <span class="badge paid">Paid</span>
+      </div>
+    </div>
+
+    <div class="history-item">
+      <!-- PASTE: assets/ewallets/gcash.png -->
+      <img src="assets/ewallets/gcash.png" alt="GCash" class="hist-logo" />
+      <div class="hist-info">
+        <p class="hist-date">Dec 01, 2023</p>
+        <p class="hist-method">GCash</p>
+      </div>
+      <div class="hist-right">
+        <p class="hist-amount">₱2,000</p>
+        <span class="badge pending">Pending</span>
+      </div>
+    </div>
+
+    <div class="history-item">
+      <!-- PASTE: debit card icon or bank logo -->
+      <div class="hist-logo-fallback"><ion-icon name="card-outline"></ion-icon></div>
+      <div class="hist-info">
+        <p class="hist-date">Nov 29, 2023</p>
+        <p class="hist-method">Debit Card</p>
+      </div>
+      <div class="hist-right">
+        <p class="hist-amount">₱4,000</p>
+        <span class="badge paid">Paid</span>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

@@ -1,0 +1,114 @@
+<ion-content class="register-content">
+
+  <div class="top-bubble"></div>
+
+  <!-- Header -->
+  <div class="reg-header">
+    <!-- PASTE logo: src/assets/logo.png -->
+    <img src="assets/logo.png" alt="LegaPay" class="reg-logo" />
+    <h1 class="reg-title">Create Account</h1>
+    <p class="reg-sub">Join LegaPay — pay school fees the easy way</p>
+  </div>
+
+  <!-- Form Card -->
+  <div class="form-card">
+
+    <!-- Full Name -->
+    <p class="field-label">Full Name</p>
+    <div class="input-wrap">
+      <ion-icon name="person-outline" class="input-icon"></ion-icon>
+      <input type="text" placeholder="e.g. Juan Dela Cruz" [(ngModel)]="fullName" class="text-input" />
+    </div>
+
+    <!-- Student ID -->
+    <p class="field-label">Student ID</p>
+    <div class="input-wrap">
+      <ion-icon name="id-card-outline" class="input-icon"></ion-icon>
+      <input type="text" placeholder="e.g. 2023-00123" [(ngModel)]="studentId" class="text-input" />
+    </div>
+
+    <!-- Email -->
+    <p class="field-label">Email Address</p>
+    <div class="input-wrap">
+      <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+      <input type="email" placeholder="your@school.edu.ph" [(ngModel)]="email" class="text-input" />
+    </div>
+
+    <!-- Mobile Number -->
+    <p class="field-label">Mobile Number</p>
+    <div class="input-wrap">
+      <ion-icon name="call-outline" class="input-icon"></ion-icon>
+      <input type="tel" placeholder="+63 9XX XXX XXXX" [(ngModel)]="mobile" class="text-input" />
+    </div>
+
+    <!-- Course & Year -->
+    <p class="field-label">Course & Year Level</p>
+    <div class="input-wrap">
+      <ion-icon name="school-outline" class="input-icon"></ion-icon>
+      <input type="text" placeholder="e.g. BSIT — 3rd Year" [(ngModel)]="course" class="text-input" />
+    </div>
+
+    <!-- Password -->
+    <p class="field-label">Password</p>
+    <div class="input-wrap">
+      <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        placeholder="Create a password"
+        [(ngModel)]="password"
+        class="text-input"
+      />
+      <ion-icon
+        [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"
+        class="input-icon-right"
+        (click)="togglePassword()"
+      ></ion-icon>
+    </div>
+
+    <!-- Confirm Password -->
+    <p class="field-label">Confirm Password</p>
+    <div class="input-wrap" style="margin-bottom: 20px;">
+      <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+      <input
+        [type]="showConfirm ? 'text' : 'password'"
+        placeholder="Re-enter your password"
+        [(ngModel)]="confirmPassword"
+        class="text-input"
+      />
+      <ion-icon
+        [name]="showConfirm ? 'eye-outline' : 'eye-off-outline'"
+        class="input-icon-right"
+        (click)="toggleConfirm()"
+      ></ion-icon>
+    </div>
+
+    <!-- Terms Checkbox -->
+    <div class="terms-row">
+      <input type="checkbox" [(ngModel)]="agreedToTerms" id="terms" class="terms-check" />
+      <label for="terms" class="terms-label">
+        I agree to the <span class="terms-link">Terms & Conditions</span> and
+        <span class="terms-link">Privacy Policy</span>
+      </label>
+    </div>
+
+    <!-- Register Button -->
+    <ion-button expand="block" class="register-btn" (click)="register()">
+      <ion-icon name="person-add-outline" slot="start"></ion-icon>
+      Create Account
+    </ion-button>
+
+    <!-- Login Link -->
+    <p class="login-row">
+      Already have an account?
+      <span class="login-link" routerLink="/login">Log In</span>
+    </p>
+
+  </div>
+
+  <!-- Bottom Mascot -->
+  <div class="mascot-section">
+    <!-- PASTE mascot: src/assets/student-mascot.png -->
+    <img src="assets/student-mascot.png" alt="Mascot" class="mascot-img" />
+  </div>
+
+</ion-content>

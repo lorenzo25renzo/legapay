@@ -1,0 +1,90 @@
+<ion-content class="login-content">
+
+  <!-- Top background bubble -->
+  <div class="top-bubble"></div>
+
+  <!-- Logo Section -->
+  <div class="logo-section">
+    <!-- PASTE your logo: src/assets/logo.png -->
+    <img src="assets/logo.png" alt="LegaPay Logo" class="logo-img" />
+    <h1 class="app-name">LegaPay</h1>
+    <p class="app-tagline">Easy School Payments</p>
+  </div>
+
+  <!-- Login Form Card -->
+  <div class="form-card">
+
+    <!-- Email Field -->
+    <div class="input-group">
+      <div class="input-wrap">
+        <ion-icon name="mail-outline" class="input-icon"></ion-icon>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          [(ngModel)]="email"
+          class="text-input"
+        />
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="input-group">
+      <div class="input-wrap">
+        <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="Password"
+          [(ngModel)]="password"
+          class="text-input"
+        />
+        <ion-icon
+          [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"
+          class="input-icon-right"
+          (click)="togglePassword()"
+        ></ion-icon>
+      </div>
+    </div>
+
+    <!-- Forgot Password -->
+    <div class="forgot-row">
+      <span class="forgot-link" (click)="forgotPassword()">Forgot Password?</span>
+    </div>
+
+    <!-- Login Button -->
+    <ion-button expand="block" class="login-btn" (click)="login()">
+      <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+      Login
+    </ion-button>
+
+    <!-- Register Link -->
+    <p class="register-row">
+      Don't have an account?
+      <span class="register-link" routerLink="/register">Create an account</span>
+    </p>
+
+  </div>
+
+  <!-- Bottom Mascot Section -->
+  <div class="mascot-section">
+    <div class="mascot-bubble"></div>
+    <!-- PASTE your student mascot: src/assets/student-mascot.png -->
+    <img src="assets/student-mascot.png" alt="LegaPay Mascot" class="mascot-img" />
+
+    <!-- Bottom Icon Row -->
+    <div class="bottom-icons">
+      <div class="bottom-icon-pill">
+        <ion-icon name="wallet-outline"></ion-icon>
+      </div>
+      <div class="bottom-icon-pill">
+        <ion-icon name="business-outline"></ion-icon>
+      </div>
+      <div class="bottom-icon-pill">
+        <ion-icon name="card-outline"></ion-icon>
+      </div>
+      <div class="bottom-icon-pill">
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

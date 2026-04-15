@@ -1,0 +1,68 @@
+.greeting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.greeting-sub { margin: 0; font-size: 13px; color: var(--lega-text-muted); }
+.greeting-name { margin: 2px 0 0; font-size: 22px; font-weight: 700; color: var(--lega-text-dark); }
+.mascot-img { width: 75px; height: auto; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.summary-card {
+  background: var(--lega-white);
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid var(--lega-border);
+}
+.summary-card:first-child { grid-column: 1 / -1; }
+.green-card { background: var(--lega-green); }
+.green-card .card-label, .green-card .card-amount { color: var(--lega-white); }
+.card-label { font-size: 12px; color: var(--lega-text-muted); margin: 0 0 4px; }
+.card-amount { font-size: 22px; font-weight: 700; margin: 0; color: var(--lega-text-dark); }
+.green-text { color: var(--lega-green) !important; }
+.orange-text { color: #e67e22 !important; }
+
+.action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.pay-btn { --background: var(--lega-green); --color: white; --border-radius: 12px; }
+.history-btn { --color: var(--lega-green); --border-color: var(--lega-green); --border-radius: 12px; }
+
+.breakdown-card {
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid var(--lega-border);
+  margin-bottom: 12px;
+}
+.breakdown-title { font-size: 14px; font-weight: 600; color: var(--lega-text-dark); }
+.fee-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--lega-text-muted);
+  padding: 5px 0;
+}
+.fee-total { font-weight: 600; color: var(--lega-text-dark); border-top: 1px solid var(--lega-border); margin-top: 4px; padding-top: 8px; }
+.divider { height: 1px; background: var(--lega-border); margin: 12px 0; }
+
+.due-card {
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid #ffe0b2;
+  background: #fff8f0;
+  margin-bottom: 80px;
+}
+.due-row { display: flex; align-items: center; gap: 12px; }
+.due-icon { font-size: 24px; color: #e67e22; }
+.due-label { margin: 0; font-size: 11px; color: var(--lega-text-muted); }
+.due-date { margin: 0; font-size: 14px; font-weight: 600; color: var(--lega-text-dark); }
+.due-details-btn { --color: #e67e22; margin-left: auto; }

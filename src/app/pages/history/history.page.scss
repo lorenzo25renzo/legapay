@@ -1,0 +1,29 @@
+.page-title { font-size: 20px; font-weight: 700; color: var(--lega-text-dark); margin-bottom: 16px; }
+
+.filter-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+.filter-btn {
+  padding: 7px 20px; border-radius: 20px; border: 1px solid var(--lega-border);
+  background: white; font-size: 13px; color: var(--lega-text-muted); cursor: pointer;
+}
+.filter-btn.active { background: var(--lega-green); color: white; border-color: var(--lega-green); }
+
+.history-list { display: flex; flex-direction: column; gap: 10px; }
+.history-item {
+  display: flex; align-items: center; gap: 12px;
+  background: white; border-radius: 14px; padding: 14px;
+  border: 1px solid var(--lega-border);
+}
+.hist-logo { width: 40px; height: 40px; border-radius: 10px; object-fit: contain; background: #f5f5f5; padding: 4px; }
+.hist-logo-fallback {
+  width: 40px; height: 40px; border-radius: 10px; background: #f0f0f0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--lega-text-muted);
+}
+.hist-info { flex: 1; }
+.hist-date { margin: 0; font-size: 12px; color: var(--lega-text-muted); }
+.hist-method { margin: 2px 0 0; font-size: 14px; font-weight: 600; color: var(--lega-text-dark); }
+.hist-right { text-align: right; }
+.hist-amount { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--lega-text-dark); }
+.badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+.badge.paid { background: #e8f5f0; color: var(--lega-green); }
+.badge.pending { background: #fef0e6; color: #e67e22; }

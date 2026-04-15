@@ -1,0 +1,162 @@
+.register-content {
+  --background: #f4faf7;
+}
+
+.top-bubble {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background: rgba(46, 125, 94, 0.08);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.reg-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 52px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.reg-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.reg-title {
+  margin: 0 0 4px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--lega-text-dark);
+}
+.reg-sub {
+  margin: 0;
+  font-size: 13px;
+  color: var(--lega-text-muted);
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ── Form Card ── */
+.form-card {
+  background: white;
+  border-radius: 24px;
+  margin: 0 20px;
+  padding: 24px 22px 20px;
+  border: 1px solid var(--lega-border);
+  position: relative;
+  z-index: 1;
+}
+
+.field-label {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--lega-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  background: #f7fbf9;
+  border: 1.5px solid var(--lega-border);
+  border-radius: 14px;
+  padding: 0 14px;
+  height: 50px;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.input-wrap:focus-within {
+  border-color: var(--lega-green);
+  background: white;
+}
+.input-icon {
+  font-size: 18px;
+  color: var(--lega-green);
+  flex-shrink: 0;
+}
+.input-icon-right {
+  font-size: 18px;
+  color: var(--lega-text-muted);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-left: auto;
+}
+.text-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--lega-text-dark);
+  font-family: inherit;
+}
+.text-input::placeholder {
+  color: #b0c4bc;
+}
+
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.terms-check {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--lega-green);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.terms-label {
+  font-size: 13px;
+  color: var(--lega-text-muted);
+  line-height: 1.5;
+}
+.terms-link {
+  color: var(--lega-green);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-btn {
+  --background: var(--lega-green);
+  --color: white;
+  --border-radius: 14px;
+  height: 52px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.login-row {
+  text-align: center;
+  font-size: 13px;
+  color: var(--lega-text-muted);
+  margin: 0;
+}
+.login-link {
+  color: var(--lega-green);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ── Bottom Mascot ── */
+.mascot-section {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 30px;
+}
+.mascot-img {
+  width: 140px;
+  height: auto;
+  opacity: 0.85;
+}

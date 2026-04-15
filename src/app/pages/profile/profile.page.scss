@@ -1,0 +1,86 @@
+.profile-banner {
+  background: var(--lega-green);
+  border-radius: 20px;
+  padding: 28px 20px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.avatar-wrap { position: relative; display: inline-block; margin-bottom: 12px; }
+.avatar-circle {
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: white;
+  color: var(--lega-green);
+  font-size: 26px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto;
+}
+.avatar-edit {
+  position: absolute; bottom: 0; right: 0;
+  width: 26px; height: 26px;
+  background: #e67e22;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 14px;
+}
+.profile-name { margin: 0 0 4px; font-size: 20px; font-weight: 700; color: white; }
+.profile-id { margin: 0 0 2px; font-size: 12px; color: rgba(255,255,255,0.75); }
+.profile-course { margin: 0; font-size: 12px; color: rgba(255,255,255,0.7); }
+
+.section-label { font-size: 12px; font-weight: 600; color: var(--lega-text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+
+.info-card, .settings-card {
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid var(--lega-border);
+  margin-bottom: 20px;
+}
+.info-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
+.info-icon { font-size: 20px; color: var(--lega-green); flex-shrink: 0; }
+.info-label { margin: 0; font-size: 11px; color: var(--lega-text-muted); }
+.info-val { margin: 2px 0 0; font-size: 14px; font-weight: 500; color: var(--lega-text-dark); }
+.divider { height: 1px; background: var(--lega-border); margin: 4px 0; }
+
+.pay-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.pay-summary-card {
+  background: white;
+  border: 1px solid var(--lega-border);
+  border-radius: 14px;
+  padding: 14px;
+}
+.pay-summary-card.full-orange { grid-column: 1 / -1; background: #fff8f0; border-color: #ffe0b2; }
+.ps-label { margin: 0 0 4px; font-size: 12px; color: var(--lega-text-muted); }
+.ps-val { margin: 0; font-size: 20px; font-weight: 700; color: var(--lega-text-dark); }
+.green-text { color: var(--lega-green) !important; }
+.orange-text { color: #e67e22 !important; }
+
+.settings-row { display: flex; align-items: center; justify-content: space-between; padding: 8px 0; cursor: pointer; }
+.settings-left { display: flex; align-items: center; gap: 12px; }
+.settings-icon-wrap {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.green-icon { background: var(--lega-green-light); color: var(--lega-green); }
+.blue-icon { background: #e3f0fb; color: #2471a3; }
+.orange-icon { background: #fff3e0; color: #e67e22; }
+.gray-icon { background: #f0f0f0; color: #888; }
+.settings-label { margin: 0; font-size: 14px; font-weight: 500; color: var(--lega-text-dark); }
+.arrow-icon { font-size: 18px; color: var(--lega-text-muted); }
+
+.logout-btn {
+  --color: #c0392b;
+  --border-color: #c0392b;
+  --border-radius: 14px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.app-version { text-align: center; font-size: 11px; color: var(--lega-text-muted); margin-bottom: 80px; }
