@@ -1,11 +1,9 @@
 <ion-content class="login-content">
 
-  <!-- Top background bubble -->
   <div class="top-bubble"></div>
 
   <!-- Logo Section -->
   <div class="logo-section">
-    <!-- PASTE your logo: src/assets/logo.png -->
     <img src="assets/logo.png" alt="LegaPay Logo" class="logo-img" />
     <h1 class="app-name">LegaPay</h1>
     <p class="app-tagline">Easy School Payments</p>
@@ -14,28 +12,36 @@
   <!-- Login Form Card -->
   <div class="form-card">
 
+    <!-- Error Message -->
+    <div class="error-box" *ngIf="errorMessage">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>{{ errorMessage }}</p>
+    </div>
+
     <!-- Email Field -->
     <div class="input-group">
-      <div class="input-wrap">
+      <div class="input-wrap" [class.input-error]="errorMessage">
         <ion-icon name="mail-outline" class="input-icon"></ion-icon>
         <input
           type="email"
           placeholder="Enter your email"
           [(ngModel)]="email"
           class="text-input"
+          (keyup.enter)="login()"
         />
       </div>
     </div>
 
     <!-- Password Field -->
     <div class="input-group">
-      <div class="input-wrap">
+      <div class="input-wrap" [class.input-error]="errorMessage">
         <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
         <input
           [type]="showPassword ? 'text' : 'password'"
           placeholder="Password"
           [(ngModel)]="password"
           class="text-input"
+          (keyup.enter)="login()"
         />
         <ion-icon
           [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"
@@ -51,9 +57,10 @@
     </div>
 
     <!-- Login Button -->
-    <ion-button expand="block" class="login-btn" (click)="login()">
-      <ion-icon name="checkmark-outline" slot="start"></ion-icon>
-      Login
+    <ion-button expand="block" class="login-btn" (click)="login()" [disabled]="isLoading">
+      <ion-icon name="checkmark-outline" slot="start" *ngIf="!isLoading"></ion-icon>
+      <span *ngIf="!isLoading">Login</span>
+      <span *ngIf="isLoading">Logging in...</span>
     </ion-button>
 
     <!-- Register Link -->
@@ -67,10 +74,7 @@
   <!-- Bottom Mascot Section -->
   <div class="mascot-section">
     <div class="mascot-bubble"></div>
-    <!-- PASTE your student mascot: src/assets/student-mascot.png -->
     <img src="assets/student-mascot.png" alt="LegaPay Mascot" class="mascot-img" />
-
-    <!-- Bottom Icon Row -->
     <div class="bottom-icons">
       <div class="bottom-icon-pill">
         <ion-icon name="wallet-outline"></ion-icon>

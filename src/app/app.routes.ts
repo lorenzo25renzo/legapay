@@ -3,8 +3,13 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'splash',
     pathMatch: 'full',
+  },
+  {
+    path: 'splash',
+    loadComponent: () =>
+      import('./pages/splash/splash.page').then((m) => m.SplashPage),
   },
   {
     path: 'login',
@@ -62,13 +67,5 @@ export const routes: Routes = [
     path: 'notifications',
     loadComponent: () =>
       import('./pages/notifications/notifications.page').then((m) => m.NotificationsPage),
-  },
-  {
-    path: 'login',
-    loadComponent: () => import('./pages/login/login.page').then( m => m.LoginPage)
-  },
-  {
-    path: 'register',
-    loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
   },
 ];

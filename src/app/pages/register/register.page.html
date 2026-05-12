@@ -4,7 +4,6 @@
 
   <!-- Header -->
   <div class="reg-header">
-    <!-- PASTE logo: src/assets/logo.png -->
     <img src="assets/logo.png" alt="LegaPay" class="reg-logo" />
     <h1 class="reg-title">Create Account</h1>
     <p class="reg-sub">Join LegaPay — pay school fees the easy way</p>
@@ -12,6 +11,18 @@
 
   <!-- Form Card -->
   <div class="form-card">
+
+    <!-- Error Message -->
+    <div class="error-box" *ngIf="errorMessage">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-box" *ngIf="successMessage">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <p>{{ successMessage }}</p>
+    </div>
 
     <!-- Full Name -->
     <p class="field-label">Full Name</p>
@@ -34,14 +45,14 @@
       <input type="email" placeholder="your@school.edu.ph" [(ngModel)]="email" class="text-input" />
     </div>
 
-    <!-- Mobile Number -->
+    <!-- Mobile -->
     <p class="field-label">Mobile Number</p>
     <div class="input-wrap">
       <ion-icon name="call-outline" class="input-icon"></ion-icon>
       <input type="tel" placeholder="+63 9XX XXX XXXX" [(ngModel)]="mobile" class="text-input" />
     </div>
 
-    <!-- Course & Year -->
+    <!-- Course -->
     <p class="field-label">Course & Year Level</p>
     <div class="input-wrap">
       <ion-icon name="school-outline" class="input-icon"></ion-icon>
@@ -54,7 +65,7 @@
       <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
       <input
         [type]="showPassword ? 'text' : 'password'"
-        placeholder="Create a password"
+        placeholder="At least 6 characters"
         [(ngModel)]="password"
         class="text-input"
       />
@@ -67,7 +78,7 @@
 
     <!-- Confirm Password -->
     <p class="field-label">Confirm Password</p>
-    <div class="input-wrap" style="margin-bottom: 20px;">
+    <div class="input-wrap" style="margin-bottom: 16px;">
       <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
       <input
         [type]="showConfirm ? 'text' : 'password'"
@@ -82,7 +93,7 @@
       ></ion-icon>
     </div>
 
-    <!-- Terms Checkbox -->
+    <!-- Terms -->
     <div class="terms-row">
       <input type="checkbox" [(ngModel)]="agreedToTerms" id="terms" class="terms-check" />
       <label for="terms" class="terms-label">
@@ -92,9 +103,11 @@
     </div>
 
     <!-- Register Button -->
-    <ion-button expand="block" class="register-btn" (click)="register()">
-      <ion-icon name="person-add-outline" slot="start"></ion-icon>
-      Create Account
+    <ion-button expand="block" class="register-btn" (click)="register()" [disabled]="isLoading || !!successMessage">
+      <ion-icon name="person-add-outline" slot="start" *ngIf="!isLoading"></ion-icon>
+      <span *ngIf="!isLoading && !successMessage">Create Account</span>
+      <span *ngIf="isLoading">Creating account...</span>
+      <span *ngIf="successMessage && !isLoading">Redirecting to Login...</span>
     </ion-button>
 
     <!-- Login Link -->
@@ -107,7 +120,6 @@
 
   <!-- Bottom Mascot -->
   <div class="mascot-section">
-    <!-- PASTE mascot: src/assets/student-mascot.png -->
     <img src="assets/student-mascot.png" alt="Mascot" class="mascot-img" />
   </div>
 

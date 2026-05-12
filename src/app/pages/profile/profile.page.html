@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <img src="assets/logo.png" alt="LegaPay" style="height:32px;" />
+      <img src="assets/logo.png" alt="LegaPay" style="height:32px; object-fit:contain;" />
     </ion-title>
     <ion-buttons slot="end">
       <ion-button routerLink="/notifications">
@@ -16,51 +16,65 @@
   <!-- Profile Header -->
   <div class="profile-banner">
     <div class="avatar-wrap">
-      <div class="avatar-circle">JD</div>
+      <div class="avatar-circle">{{ initials }}</div>
       <div class="avatar-edit">
         <ion-icon name="camera-outline"></ion-icon>
       </div>
     </div>
-    <h2 class="profile-name">Juan Dela Cruz</h2>
-    <p class="profile-id">Student ID: 2023-00123</p>
-    <p class="profile-course">BS Information Technology — 3rd Year</p>
+    <h2 class="profile-name">{{ user?.fullName || 'User' }}</h2>
+    <p class="profile-id">Student ID: {{ user?.studentId || '—' }}</p>
+    <p class="profile-course">{{ user?.course || '—' }}</p>
   </div>
 
   <!-- Account Info -->
   <p class="section-label">Account Information</p>
   <ion-card class="info-card">
     <ion-card-content>
+
       <div class="info-row">
         <ion-icon name="mail-outline" class="info-icon"></ion-icon>
         <div class="info-content">
           <p class="info-label">Email Address</p>
-          <p class="info-val">juandelacruz@school.edu.ph</p>
+          <p class="info-val">{{ user?.email || '—' }}</p>
         </div>
       </div>
       <div class="divider"></div>
+
       <div class="info-row">
         <ion-icon name="call-outline" class="info-icon"></ion-icon>
         <div class="info-content">
           <p class="info-label">Mobile Number</p>
-          <p class="info-val">+63 912 345 6789</p>
+          <p class="info-val">{{ user?.mobile || '—' }}</p>
         </div>
       </div>
       <div class="divider"></div>
+
       <div class="info-row">
         <ion-icon name="school-outline" class="info-icon"></ion-icon>
         <div class="info-content">
-          <p class="info-label">Department</p>
-          <p class="info-val">College of Computer Studies</p>
+          <p class="info-label">Course & Year Level</p>
+          <p class="info-val">{{ user?.course || '—' }}</p>
         </div>
       </div>
       <div class="divider"></div>
+
+      <div class="info-row">
+        <ion-icon name="id-card-outline" class="info-icon"></ion-icon>
+        <div class="info-content">
+          <p class="info-label">Student ID</p>
+          <p class="info-val">{{ user?.studentId || '—' }}</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+
       <div class="info-row">
         <ion-icon name="calendar-outline" class="info-icon"></ion-icon>
         <div class="info-content">
-          <p class="info-label">School Year</p>
-          <p class="info-val">2023–2024, 1st Semester</p>
+          <p class="info-label">Member Since</p>
+          <p class="info-val">{{ user?.createdAt || '—' }}</p>
         </div>
       </div>
+
     </ion-card-content>
   </ion-card>
 
@@ -88,37 +102,42 @@
 
       <div class="settings-row">
         <div class="settings-left">
-          <div class="settings-icon-wrap green-icon"><ion-icon name="notifications-outline"></ion-icon></div>
+          <div class="settings-icon-wrap green-icon">
+            <ion-icon name="notifications-outline"></ion-icon>
+          </div>
           <p class="settings-label">Push Notifications</p>
         </div>
         <ion-toggle [(ngModel)]="notifEnabled" color="success"></ion-toggle>
       </div>
-
       <div class="divider"></div>
 
       <div class="settings-row">
         <div class="settings-left">
-          <div class="settings-icon-wrap blue-icon"><ion-icon name="finger-print-outline"></ion-icon></div>
+          <div class="settings-icon-wrap blue-icon">
+            <ion-icon name="finger-print-outline"></ion-icon>
+          </div>
           <p class="settings-label">Biometric Login</p>
         </div>
         <ion-toggle [(ngModel)]="bioEnabled" color="success"></ion-toggle>
       </div>
-
       <div class="divider"></div>
 
       <div class="settings-row" (click)="changePassword()">
         <div class="settings-left">
-          <div class="settings-icon-wrap orange-icon"><ion-icon name="lock-closed-outline"></ion-icon></div>
+          <div class="settings-icon-wrap orange-icon">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+          </div>
           <p class="settings-label">Change Password</p>
         </div>
         <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
       </div>
-
       <div class="divider"></div>
 
       <div class="settings-row" (click)="contactSupport()">
         <div class="settings-left">
-          <div class="settings-icon-wrap gray-icon"><ion-icon name="headset-outline"></ion-icon></div>
+          <div class="settings-icon-wrap gray-icon">
+            <ion-icon name="headset-outline"></ion-icon>
+          </div>
           <p class="settings-label">Contact Support</p>
         </div>
         <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>

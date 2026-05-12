@@ -1,0 +1,72 @@
+<ion-content class="splash-content" (click)="onTap()">
+
+  <!-- Floating background circles -->
+  <div class="bg-circle circle-1"></div>
+  <div class="bg-circle circle-2"></div>
+  <div class="bg-circle circle-3"></div>
+  <div class="bg-circle circle-4"></div>
+
+  <!-- Main center content -->
+  <div class="splash-center" [class.animate-in]="animating">
+
+    <!-- Logo card -->
+    <div class="logo-card" [class.logo-pop]="animating">
+      <!-- PASTE your logo: src/assets/logo.png -->
+      <img src="assets/logo.png" alt="LegaPay Logo" class="splash-logo" />
+    </div>
+
+    <!-- App name -->
+    <h1 class="splash-appname" [class.fade-up]="animating">LegaPay</h1>
+
+    <!-- Tagline -->
+    <p class="splash-tagline" [class.fade-up-delay]="animating">
+      Easy School Payments
+    </p>
+
+    <!-- Divider dots -->
+    <div class="dot-row" [class.fade-up-delay2]="animating">
+      <span class="dot"></span>
+      <span class="dot dot-mid"></span>
+      <span class="dot"></span>
+    </div>
+
+  </div>
+
+  <!-- Bottom section -->
+  <div class="splash-bottom">
+
+    <!-- "Click anywhere" label — shown while paused -->
+    <div class="tap-hint" [class.hint-visible]="readyToTap && !animating">
+      <ion-icon name="hand-left-outline" class="tap-icon"></ion-icon>
+      <p class="tap-label">Tap anywhere to continue</p>
+    </div>
+
+    <!-- Loading bar — shown while animating -->
+    <div class="loading-wrap" [class.bar-visible]="animating">
+      <div class="loading-bar">
+        <div class="loading-fill" [style.width]="loadProgress + '%'"></div>
+      </div>
+      <p class="loading-label">Loading... {{ loadProgress }}%</p>
+    </div>
+
+    <!-- Bottom payment icons -->
+    <div class="splash-icons" [class.fade-up-delay2]="animating || readyToTap">
+      <div class="splash-icon-pill">
+        <ion-icon name="wallet-outline"></ion-icon>
+      </div>
+      <div class="splash-icon-pill">
+        <ion-icon name="business-outline"></ion-icon>
+      </div>
+      <div class="splash-icon-pill">
+        <ion-icon name="card-outline"></ion-icon>
+      </div>
+      <div class="splash-icon-pill">
+        <ion-icon name="phone-portrait-outline"></ion-icon>
+      </div>
+    </div>
+
+    <p class="splash-version">v1.0.0 &nbsp;·&nbsp; © 2024 LegaPay</p>
+
+  </div>
+
+</ion-content>

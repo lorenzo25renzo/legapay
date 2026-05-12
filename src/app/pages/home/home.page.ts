@@ -10,6 +10,7 @@ import {
   IonIcon, IonContent, IonCard, IonCardHeader,
   IonCardTitle, IonCardContent
 } from '@ionic/angular/standalone';
+import { AuthService, User } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,18 @@ import {
   ],
 })
 export class HomePage {
-  constructor() {
+  user: User | null = null;
+  firstName: string = 'User';
+
+  constructor(private authService: AuthService) {
     addIcons({ notificationsOutline, menuOutline, cardOutline, timeOutline, alarmOutline });
+  }
+
+  // ✅ Runs every time Home tab becomes active
+  ionViewWillEnter() {
+    this.user = this.authService.getCurrentUser();
+    if (this.user) {
+      this.firstName = this.user.fullName.trim().split(' ')[0];
+    }
   }
 }

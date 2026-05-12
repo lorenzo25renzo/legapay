@@ -8,9 +8,8 @@ import {
   checkmarkOutline, walletOutline, businessOutline,
   cardOutline, ellipsisHorizontalOutline
 } from 'ionicons/icons';
-import {
-  IonContent, IonButton, IonIcon
-} from '@ionic/angular/standalone';
+import { IonContent, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -26,8 +25,10 @@ export class LoginPage {
   email: string = '';
   password: string = '';
   showPassword: boolean = false;
+  errorMessage: string = '';
+  isLoading: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
     addIcons({
       mailOutline, lockClosedOutline, eyeOutline, eyeOffOutline,
       checkmarkOutline, walletOutline, businessOutline,
@@ -40,18 +41,29 @@ export class LoginPage {
   }
 
   login() {
-    // Hardcoded credentials for static demo
-    const validEmail = 'bumaya';
-    const validPassword = 'legapay123';
+    this.errorMessage = '';
 
-    if (this.email === validEmail && this.password === validPassword) {
-      this.router.navigate(['/tabs/home']);
-    } else {
-      alert('Invalid email or password.\n\nUse:\nEmail: student@legapay.ph\nPassword: legapay123');
+    if (!this.email || !this.password) {
+      this.errorMessage = 'Please enter your email and password.';
+      return;
     }
+
+    this.isLoading = true;
+
+    // Small delay to simulate processing
+    setTimeout(() => {
+      const result = this.authService.login(this.email, this.password);
+      this.isLoading = false;
+
+      if (result.success) {
+        this.router.navigate(['/tabs/home'], { replaceUrl: true });
+      } else {
+        this.errorMessage = result.message;
+      }
+    }, 600);
   }
 
   forgotPassword() {
-    alert('A password reset link will be sent to your email.');
+    alert('A password reset link will be sent to your registered email address.');
   }
 }
